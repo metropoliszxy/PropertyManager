@@ -1,0 +1,93 @@
+??/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Module:       PropertyManager.cpp
+Author:       Xinye Zhao
+Date started: 03/24/16
+Purpose:      Standalone version of PropertyManager. - 属性管理器
+Called by:    The USER.
+
+------------- Copyright (C) 2016  Xinye Zhao (zhaoxinye@nudt.edu.cn) -------------
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU Lesser General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+details.
+
+You should have received a copy of the GNU Lesser General Public License along with
+this program; if not, write to the Free Software Foundation, Inc., 188 Road Two - 
+Zhifu District, Yantai, Shandong Province, China.P.R.
+
+Further information about the GNU Lesser General Public License can also be found on
+the world wide web at http://www.gnu.org.
+
+FUNCTIONAL DESCRIPTION
+--------------------------------------------------------------------------------
+
+This class implements the PropertyManager standalone application. It is set up for 
+compilation under gnu C++, MSVC++, or other compiler.
+
+HISTORY
+--------------------------------------------------------------------------------
+16/03/24   PropertyManager   Created
+
+
+使用说明
+--------------------------------------------------------------------------------
+1. import src\FGLYRABase.h FGFDMExec.h src\FGLYRABase.cpp FGFDMExec.cpp src\input_output src\simgear
+2. 绑定Tie内部变量与数据池中的变量
+	FDMExec->GetPropertyManager()->Tie("simulation/frame_start_time", &actual_elapsed_time);
+	FDMExec->GetPropertyManager()->Tie("simulation/cycle_duration", &cycle_duration);
+3. 从命令行中输入的属性property，在数据池中按其名称设置值
+	for (unsigned int i=0; i<CommandLineProperties.size(); i++) {
+		if (!FDMExec->GetPropertyManager()->GetNode(CommandLineProperties[i])) {
+			cerr << endl << "  No property by the name " << CommandLineProperties[i] << endl;
+			exit(-1);
+		} else {
+			FDMExec->SetPropertyValue(CommandLineProperties[i], CommandLinePropertyValues[i]);
+		}
+	}
+    
+测试说明
+--------------------------------------------------------------------------------
+1. 对于程序内部变量，例如：cycle_duration，通过与PropertyManager绑定
+	FDMExec->GetPropertyManager()->Tie("simulation/cycle_duration", &cycle_duration);
+	a.在命令行输入：
+		./PropertyManager --property=simulation/cycle_duration=-10.0
+	  输出为：
+		cycle_duration=-10.0
+	b.在命令行输入：
+		./PropertyManager --test
+	  输出为：
+		cycle_duration=10.0
+2. 对于程序不存在变量，例如：ap/roll-pid-kp1，在脚本script文件中property中对名称及
+	值进行设置，没有与PropertyManager绑定；如果没有在scipt中出现，命令行输入报错
+
+	下面为c1723.xml文件片段
+<runscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://LYRASim.sf.net/LYRASimScript.xsd" name="C172-01A takeoff run">
+	<use aircraft="c172x" initialize="reset00"/>
+	<run start="0.0" end="200" dt="0.00833333333333333333">
+		<!-- Initialize with brakes on -->
+		<property value="300">ap/roll-pid-kp1</property>
+	</run>
+</runscript>
+
+	a.在命令行输入：
+		./PropertyManager --script=c1723.xml --property=ap/roll-pid-kp1=-300.0
+	  输出为：
+		ap/roll-pid-kp1=-300.0
+	b.在命令行输入：
+		./PropertyManager --script=c1723.xml
+	  输出为：
+		ap/roll-pid-kp1=-300.0
+	c.在命令行输入：
+		./PropertyManager --test
+	  ap/roll-pid-kp1无法输出
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+INCLUDES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{9280c0ad-03f6-42a4-9238-8d8e1fa5d83f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\input_output">
+      <UniqueIdentifier>{5d140c94-4b60-4bca-8752-32f8da0c5a3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\simgear">
+      <UniqueIdentifier>{93855877-141f-4dab-be1f-098ac61c040b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\simgear\xml">
+      <UniqueIdentifier>{e5904c42-2b93-44a4-9fa8-eac51b41298f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\simgear\props">
+      <UniqueIdentifier>{64bc29d5-e64b-4841-a2f4-6e88e87ea75b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\simgear\structure">
+      <UniqueIdentifier>{cc89bc86-6ed6-4a61-8f59-32e543e8ae7e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\PropertyManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simgear\xml\easyxml.cxx">
+      <Filter>src\simgear\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simgear\xml\xmlparse.c">
+      <Filter>src\simgear\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simgear\xml\xmlrole.c">
+      <Filter>src\simgear\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simgear\xml\xmltok.c">
+      <Filter>src\simgear\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input_output\FGPropertyManager.cpp">
+      <Filter>src\input_output</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input_output\FGPropertyReader.cpp">
+      <Filter>src\input_output</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simgear\props\propertyObject.cxx">
+      <Filter>src\simgear\props</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simgear\props\props.cxx">
+      <Filter>src\simgear\props</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FGLYRABase.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input_output\FGXMLElement.cpp">
+      <Filter>src\input_output</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\simgear\compiler.h">
+      <Filter>src\simgear</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\ascii.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\asciitab.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\easyxml.hxx">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\expat.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\expat_config.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\expat_external.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\iasciitab.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\internal.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\latin1tab.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\macconfig.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\nametab.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\utf8tab.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\winconfig.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\xmlrole.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\xmltok.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\xml\xmltok_impl.h">
+      <Filter>src\simgear\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input_output\FGPropertyManager.h">
+      <Filter>src\input_output</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input_output\FGPropertyReader.h">
+      <Filter>src\input_output</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\props\propertyObject.hxx">
+      <Filter>src\simgear\props</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\props\props.hxx">
+      <Filter>src\simgear\props</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\structure\SGReferenced.hxx">
+      <Filter>src\simgear\structure</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simgear\structure\SGSharedPtr.hxx">
+      <Filter>src\simgear\structure</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FGLYRABase.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input_output\FGXMLElement.h">
+      <Filter>src\input_output</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\simgear\xml\.cvsignore">
+      <Filter>src\simgear\xml</Filter>
+    </None>
+    <None Include="src\simgear\xml\CMakeLists.txt">
+      <Filter>src\simgear\xml</Filter>
+    </None>
+    <None Include="src\simgear\xml\Makefile.am">
+      <Filter>src\simgear\xml</Filter>
+    </None>
+  </ItemGroup>
+</Project>
