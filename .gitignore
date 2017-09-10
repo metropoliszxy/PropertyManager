@@ -35,3 +35,4 @@
 *.cmake
 *.check_cache
 *.marks
+*.bin
