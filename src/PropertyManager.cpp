@@ -192,7 +192,7 @@ int real_main(int argc, char* argv[])
 
 	SetPropertyValue("simulation/cycle_duration", 78);
 
-	cout << "have a test:" << endl;
+	cout << "have another test:" << endl;
 	cout << "simulation/cycle_duration	" << GetPropertyValue("simulation/cycle_duration") << endl;
 
 	return 0;
