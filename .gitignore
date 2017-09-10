@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+# Interlever complied files made by CMake
+*.cmake
+*.check_cache
+*.marks
