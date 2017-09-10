@@ -190,8 +190,9 @@ int real_main(int argc, char* argv[])
 	GetPropertyManager()->Tie("simulation/frame_start_time", &actual_elapsed_time);
 	GetPropertyManager()->Tie("simulation/cycle_duration", &cycle_duration);
 
-	SetPropertyValue("simulation/cycle_duration", 56);
+	SetPropertyValue("simulation/cycle_duration", 78);
 
+	cout << "have a test:" << endl;
 	cout << "simulation/cycle_duration	" << GetPropertyValue("simulation/cycle_duration") << endl;
 
 	return 0;
